@@ -20,6 +20,8 @@ spec:
       - name: subdirectory
         value: contest-arena
   - name: secret-detection
+    runAfter:
+    - clone-git-repo
     taskRef: 
       name : secret-detection
     workspaces:

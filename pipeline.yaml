@@ -1,17 +1,14 @@
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
-  name: secret_detection_pipeline
+  name: secret-detection-pipeline
 spec:
-  params: 
-    - name: repository
-      type: string
   workspaces:
   - name: workspace
   tasks:
-  - name: detect_secret
+  - name: secret-detection
     taskRef: 
-      name : detect-secret
+      name : secret-detection
     workspaces:
       - name: source
         workspace: workspace
@@ -21,7 +18,7 @@ spec:
     - name: clone_path
       value: contest-arena
     - name: config_file_url
-      value: 
+      value: https://raw.githubusercontent.com/urvashigupta7/secret_detection/master/gitleaks.toml
     - name: config_file_path
       value: gitleaks.toml
     - name: output_format

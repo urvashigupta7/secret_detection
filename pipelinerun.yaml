@@ -1,10 +1,10 @@
 apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  name: secret_detection_pipelinerun
+  name: secret-detection-pipelinerun
 spec:
   pipelineRef:
-    name: secret_detection_pipeline
+    name: secret-detection-pipeline
   workspaces:
   - name: workspace
     persistentvolumeclaim:

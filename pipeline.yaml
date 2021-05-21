@@ -3,6 +3,13 @@ kind: Pipeline
 metadata:
   name: secret-detection-pipeline
 spec:
+  params: 
+    - name: repo_url
+      type: string
+      description: url of the repo to be checked.
+    - name: repo_path
+      type: string
+      description: path where repo would be cloned.
   workspaces:
   - name: workspace
   tasks:
@@ -14,11 +21,11 @@ spec:
       name: git-clone
     params:
       - name: url
-        value: https://github.com/urvashigupta7/contest-arena
+        value: $(params.repo_url)
       - name: deleteExisting
         value: "true"
       - name: subdirectory
-        value: contest-arena
+        value: $(params.repo_path)
   - name: secret-detection
     runAfter:
     - clone-git-repo
@@ -29,7 +36,7 @@ spec:
         workspace: workspace
     params:
     - name: repo_path
-      value: contest-arena
+      value: $(repo_path)
     - name: config_file_url
       value: https://raw.githubusercontent.com/urvashigupta7/secret_detection/master/gitleaks.toml
     - name: config_file_path
@@ -38,3 +45,5 @@ spec:
       value: json
     - name: report_output_path
       value: report.json
+    - name: args
+      value: ["--no-git"]

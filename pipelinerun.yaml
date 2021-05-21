@@ -5,6 +5,11 @@ metadata:
 spec:
   pipelineRef:
     name: secret-detection-pipeline
+  params:
+  - name: repo_url
+    value: https://github.com/urvashigupta7/contest-arena
+  - name: repo_path
+    value: contest-arena
   workspaces:
   - name: workspace
     persistentvolumeclaim:

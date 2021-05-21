@@ -36,7 +36,7 @@ spec:
         workspace: workspace
     params:
     - name: repo_path
-      value: $(repo_path)
+      value: $(params.repo_path)
     - name: config_file_url
       value: https://raw.githubusercontent.com/urvashigupta7/secret_detection/master/gitleaks.toml
     - name: config_file_path
@@ -46,4 +46,4 @@ spec:
     - name: report_output_path
       value: report.json
     - name: args
-      value: ["--no-git"]
+      value: ["--verbose","--no-git"]

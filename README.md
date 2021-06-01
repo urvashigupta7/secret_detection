@@ -8,12 +8,14 @@ This task uses [gitleaks](https://github.com/zricethezav/gitleaks) tool for dete
 `kubectl apply -f https://raw.githubusercontent.com/urvashigupta7/secret_detection/master/task/secret_detection.yaml`
 
 ## Install `git-clone` Task
-`https://raw.githubusercontent.com/tektoncd/catalog/main/task/git-clone/0.3/git-clone.yaml`
+`kubectl apply -f https://raw.githubusercontent.com/tektoncd/catalog/main/task/git-clone/0.3/git-clone.yaml`
 
 ## Create PVC,Pipeline and Pipelinerun
-`https://raw.githubusercontent.com/urvashigupta7/secret_detection/master/pvc.yaml`
-`https://raw.githubusercontent.com/urvashigupta7/secret_detection/master/pipeline.yaml`
-`https://raw.githubusercontent.com/urvashigupta7/secret_detection/master/pipelinerun.yaml`
+`kubectl apply -f https://raw.githubusercontent.com/urvashigupta7/secret_detection/master/pvc.yaml`
+
+`kubectl apply -f https://raw.githubusercontent.com/urvashigupta7/secret_detection/master/pipeline.yaml`
+
+`kubectl apply -f https://raw.githubusercontent.com/urvashigupta7/secret_detection/master/pipelinerun.yaml`
 
 ## Workspaces
 * **source** : A Workspace containing your source directory.

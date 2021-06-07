@@ -204,5 +204,5 @@ title = "gitleaks config"
 
 # Global allowlist
 [allowlist]
-	description = "image allowlists"
-	files = ['''(.*?)(jpg|gif|doc|pdf|bin|lock.json)$''']
+	description = "allowlists files"
+	files = ['''(.*?)(jpg|gif|doc|pdf|bin|lock.json|yarn.lock)$''']
